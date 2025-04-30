@@ -1,0 +1,40 @@
+
+
+<div class="container">
+
+    <h2>Exercice 2</h2>
+
+    <div class="calcul">
+        <form (ngSubmit)="onCalcul()">
+
+            <input type="number" id="number_1" name="number_1" [(ngModel)]="enteredNumber1" />
+
+            <select id="opt_lst" [(ngModel)]="operation" name="opt_lst">
+                @for (op of operation_list; track op) {
+                    <option value="{{op}}">{{op}}</option>
+                }
+            </select>
+
+            <input type="number" id="number_2" name="number_2" [(ngModel)]="enteredNumber2" />
+
+            <button type="submit">Calculer</button>
+
+        </form>
+    </div>
+
+    <br />
+
+    <div class="result">
+        <label>Résultat : </label>
+        <span>{{result}}</span>
+    </div>
+
+    <app-history [history]="history" (delete)="deleteEntry($event)"/>
+    
+    <br />
+    
+    <div class="homeButton">
+        <button routerLink="/">⬅ Retour à la page d'accueil</button>
+    </div>
+</div>
+

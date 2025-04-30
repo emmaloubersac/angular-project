@@ -1,0 +1,43 @@
+
+
+<div class="container">
+
+    <h2>Exercice 1</h2>
+
+    <form>
+        <div>
+            <label>Entrez votre prénom : </label>
+            <input type="text" id="title" name="title" [(ngModel)]="enteredName" />
+        </div>
+        <br />
+        <div>
+            <label for="font">Choisissez une police : </label>
+            <select id="font" [(ngModel)]="font" name="font">
+                @for (font of fontOpt; track font) {
+                    <option value="{{font}}">{{font}}</option>
+                }
+            </select>
+        </div>
+        <br />
+        <div>
+            <label for="size">Taille des caractères (px) : </label>
+            <input id="size" type="number" [(ngModel)]="fontSize" name="fontSize" min="1" />
+        </div>
+        <br />
+        <div>
+            <label><input type="checkbox" [(ngModel)]="align.left" name="left" /> Gauche</label>
+            <label><input type="checkbox" [(ngModel)]="align.center" name="center" /> Centre</label>
+            <label><input type="checkbox" [(ngModel)]="align.right" name="right" /> Droite</label>
+        </div>
+        <br />
+        <div [ngStyle]="getStyle()" class="preview-box">
+            Bonjour <span>{{ enteredName | uppercase }}</span> !
+        </div>
+        <br />
+    </form>
+    <div class="homeButton">
+        <button routerLink="/">⬅ Retour à la page d'accueil</button>
+    </div>
+
+</div>
+

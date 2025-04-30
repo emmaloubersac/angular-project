@@ -1,0 +1,68 @@
+ul {
+    list-style: none;
+    max-height: 40vh;
+    overflow: auto;
+    border: 1px solid #ccc;
+    justify-content: center;
+}
+
+.deleteButton {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+li {
+    text-align: center;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+.history-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  .history-entry:hover {
+    background: #f0f0f0;
+  }
+  
+  .history-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .time {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .operation {
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .delete-button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .delete-button:hover {
+    color: red;
+  }
+
+  .empty-message {
+    font-style: italic;
+    color: #999;
+    padding: 10px;
+  }

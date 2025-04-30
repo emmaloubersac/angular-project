@@ -1,0 +1,19 @@
+
+<div>
+    <h2>Historique des opérations</h2>
+    <ul class="history-list">
+        @for (entry of history; track entry.time){
+            <li class="history-entry">
+                <div class="history-info">
+                  <span class="time">{{ entry.time }}</span>
+                  <span class="operation">{{ entry.operation }} = {{ entry.result }}</span>
+                </div>
+                <button class="delete-button" (click)="onDeleteEntry(entry)" title="Supprimer">
+                  🗑️
+                </button>
+              </li>
+        } @empty {
+            <div class="empty-message">Aucune opération enregistrée.</div>
+        }
+    </ul>
+</div>

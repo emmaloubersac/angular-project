@@ -1,0 +1,42 @@
+<div class="container">
+
+    <h2>Détails de la Transaction</h2>
+
+    @if (transaction){
+        <!--
+        <p><strong>Date:</strong> {{ transaction.date | date:"short" }}</p>
+        <p><strong>Montant:</strong> {{ transaction.amount }} €</p>
+        <p><strong>Solde:</strong> {{ transaction.balance }} €</p>
+        <p><strong>Label:</strong> {{ transaction.label }}</p>
+        <p><strong>Description:</strong> {{ transaction.description }}</p>
+         -->
+        <div class="transaction-card">
+            <div class="detail-row">
+              <span class="label">Date:</span>
+              <span>{{ transaction.date | date:"short" }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Montant:</span>
+              <span>{{ transaction.amount }} €</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Solde:</span>
+              <span>{{ transaction.balance }} €</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Label:</span>
+              <span>{{ transaction.label }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Description:</span>
+              <span>{{ transaction.description }}</span>
+            </div>
+          </div>
+    } @else {
+        <p>Chargement du détail de la transaction...</p>
+    }
+    
+    <div class="homeButton">
+        <button [routerLink]="['/exercise3']">⬅ Retour à la liste de transactions</button>
+    </div>  
+</div>

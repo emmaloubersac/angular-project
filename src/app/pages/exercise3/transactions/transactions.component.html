@@ -1,0 +1,37 @@
+<div>
+    <h2>Liste de transactions</h2>
+    @if (transactionsList) {
+        <div class="table-wrapper">
+            <table class="transaction-table">
+                <thead>
+                    <tr class="clickable-label">
+                        <th (click)="sortBy('date')" title="Trier par date">
+                            Date {{ getSortArrow('date') }}
+                        </th>
+                        <th (click)="sortBy('amount')" title="Trier par montant">
+                            Montant {{ getSortArrow('amount') }}
+                        </th>
+                        <th (click)="sortBy('balance')" title="Trier par solde">
+                            Solde {{ getSortArrow('balance') }}
+                        </th>
+                        <th (click)="sortBy('label')" title="Trier par label">
+                            Label {{ getSortArrow('label') }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (transaction of transactionsList; track transaction.id){
+                        <tr (click)="goToDetail(transaction.id)" class="clickable-row">
+                            <td>{{ transaction.date | date:'mediumDate' }}</td>
+                            <td>{{ transaction.amount | number:'1.2-2' }} €</td>
+                            <td>{{ transaction.balance | number:'1.2-2' }} €</td>
+                            <td>{{ transaction.label }}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>    
+        </div>
+    } @else {
+        <p>Chargement de la liste de transactions...</p>
+    }
+</div>
